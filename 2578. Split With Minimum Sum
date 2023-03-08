@@ -3,10 +3,15 @@
 class Solution {
 public:
     int splitNum(int num) {
+    
+    // Convert the Given Number Into a String and Sort the String 
         
         string str = to_string(num);
         
         sort(str.begin(), str.end());
+        
+        
+        // Declare 2 strings & add char the of string in alternate strings 
         
         string s1, s2;
         
@@ -21,6 +26,8 @@ public:
             }
         }
         
+        // If the length of the string is odd then add run loop till 2nd last char & add last char in 1st string 
+        
         else{
             for(int i=0;i<str.size()-1;i++){
                 if(i%2==0){
@@ -33,7 +40,7 @@ public:
             s1+=str[str.size()-1];
         }
         
-        // cout << s1<<" "<<s2;
+        // Convert that 2 string into int & add them & return that sum
         
         int sum = stoi(s1) + stoi(s2);
         
