@@ -1,0 +1,43 @@
+// C++ Solution For LeetCode Problem: Split With Minimum Sum 
+
+class Solution {
+public:
+    int splitNum(int num) {
+        
+        string str = to_string(num);
+        
+        sort(str.begin(), str.end());
+        
+        string s1, s2;
+        
+        if(str.size()%2 == 0){
+            for(int i=0;i<str.size();i++){
+                if(i%2==0){
+                    s1+=str[i];
+                }
+                else{
+                    s2+=str[i];
+                }
+            }
+        }
+        
+        else{
+            for(int i=0;i<str.size()-1;i++){
+                if(i%2==0){
+                    s1+=str[i];
+                }
+                else{
+                    s2+=str[i];
+                }
+            }
+            s1+=str[str.size()-1];
+        }
+        
+        // cout << s1<<" "<<s2;
+        
+        int sum = stoi(s1) + stoi(s2);
+        
+        return sum;
+        
+    }
+};
